@@ -3,6 +3,14 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
+    <Button
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:id="@+id/mapActivityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openMapActivity"
+        android:text="Ouvrir la carte des stations Vélibs"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

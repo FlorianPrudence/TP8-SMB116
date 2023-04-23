@@ -7,8 +7,6 @@ public class Satellite {
     private final float cn0DbHz;
     private final boolean hasAlmanac;
     private final boolean hasEphemeris;
-
-
     public Satellite(float azimuth, float elevation, int svid, float cn0DbHz, boolean hasAlmanac, boolean hasEphemeris) {
         this.azimuth = azimuth;
         this.elevation = elevation;
@@ -17,31 +15,6 @@ public class Satellite {
         this.hasAlmanac = hasAlmanac;
         this.hasEphemeris = hasEphemeris;
     }
-
-    public float getAzimuth() {
-        return azimuth;
-    }
-
-    public float getElevation() {
-        return elevation;
-    }
-
-    public int getSvid() {
-        return svid;
-    }
-
-    public float getCn0DbHz() {
-        return cn0DbHz;
-    }
-
-    public boolean isHasAlmanac() {
-        return hasAlmanac;
-    }
-
-    public boolean isHasEphemeris() {
-        return hasEphemeris;
-    }
-
     // Pour l'affichage dans l'IHM des éléments de la liste
     @Override
     public String toString() {

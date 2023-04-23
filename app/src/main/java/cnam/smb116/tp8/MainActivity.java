@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -12,6 +13,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,11 +22,15 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.INTERNET;
+
+import cnam.smb116.tp8.StationBusiness.Station;
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         setContentView(R.layout.activity_main);
 
         // Demande des permissions nécéssaires à l'exécution de l'activité
-        requestPermissions(new String[] { ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION}, 101);
+        requestPermissions(new String[] { ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, INTERNET}, 101);
 
         // Initialisation des composants
         ListView listView = findViewById(R.id.listSatellites);
@@ -154,4 +160,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     public void onProviderEnabled(String provider) {}
     @Override
     public void onProviderDisabled(String provider) {}
+
+    public void openMapActivity(View v) {
+        Intent intent = new Intent(MainActivity.this, MapActivity.class);
+        startActivity(intent);
+    }
 }
